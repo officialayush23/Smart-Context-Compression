@@ -3,10 +3,10 @@
 // ---------------------------------------------------------------------------
 
 export const ROUTES = {
-  direct: { key: "direct", label: "Direct Answer", color: "chart-3", desc: "Model knows it — skip retrieval" },
-  vector: { key: "vector", label: "Vector Store", color: "chart-1", desc: "Semantic search over indexed chunks" },
-  hybrid: { key: "hybrid", label: "Hybrid + Rerank", color: "chart-2", desc: "BM25 + dense, cross-encoder rerank" },
-  web: { key: "web", label: "Live Web Scrape", color: "chart-4", desc: "Index is stale — scrape fresh sources" },
+  direct: { key: "direct", label: "Direct Answer", color: "oklch(0.80 0.15 80)", desc: "Model knows it — skip retrieval" },
+  vector: { key: "vector", label: "Vector Store", color: "oklch(0.72 0.17 300)", desc: "Semantic search over indexed chunks" },
+  hybrid: { key: "hybrid", label: "Hybrid + Rerank", color: "oklch(0.75 0.13 225)", desc: "BM25 + dense, cross-encoder rerank" },
+  web: { key: "web", label: "Live Web Scrape", color: "oklch(0.80 0.20 140)", desc: "Index is stale — scrape fresh sources" },
 }
 
 export const PIPELINE_STAGES = [
@@ -27,10 +27,10 @@ export const KPIS = [
 ]
 
 export const ROUTE_MIX = [
-  { key: "direct", label: "Direct Answer", value: 22, color: "var(--chart-3)" },
-  { key: "vector", label: "Vector Store", value: 41, color: "var(--chart-1)" },
-  { key: "hybrid", label: "Hybrid + Rerank", value: 26, color: "var(--chart-2)" },
-  { key: "web", label: "Live Web Scrape", value: 11, color: "var(--chart-4)" },
+  { key: "direct", label: "Direct Answer", value: 22, color: "oklch(0.80 0.15 80)" },
+  { key: "vector", label: "Vector Store", value: 41, color: "oklch(0.72 0.17 300)" },
+  { key: "hybrid", label: "Hybrid + Rerank", value: 26, color: "oklch(0.75 0.13 225)" },
+  { key: "web", label: "Live Web Scrape", value: 11, color: "oklch(0.80 0.20 140)" },
 ]
 
 export const LATENCY_SERIES = [

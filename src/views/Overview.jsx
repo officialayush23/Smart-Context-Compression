@@ -86,6 +86,12 @@ export default function Overview({ onOpenPlayground }) {
           </CardHeader>
           <CardContent>
             <FunnelBars data={COMPRESSION_BARS} />
+            <div className="mt-4 rounded-lg bg-secondary/40 px-3 py-2.5 text-[11px] leading-relaxed">
+              <span className="font-mono text-emerald-400">11,310 tokens</span>
+              <span className="text-muted-foreground"> never reach the model — per query. At 12.8k queries/day that is </span>
+              <span className="font-mono text-emerald-400">~145M tokens/day</span>
+              <span className="text-muted-foreground"> of context avoided.</span>
+            </div>
           </CardContent>
         </Card>
 

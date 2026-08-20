@@ -18,17 +18,31 @@ npm run dev
 | `index.html` | — | added `class="dark"` + title |
 | `components.json` | missing | added (new-york, jsx, lucide, `@/` aliases) |
 
-## Optional: run the shadcn preset now
+## After the shadcn preset init (done)
 
-The alias error is gone, so this works:
+The preset overwrote `src/components/ui/*` with the Radix versions and swapped the theme to
+the lime palette. Three follow-up patches were applied so the dashboard still works:
 
-```bash
-npx shadcn@latest init --preset b3QvsRiOO --base radix --template vite --pointer
+- `progress.jsx` — re-added the `indicatorClassName` prop (shadcn's Progress drops it, which
+  killed the red/amber/green index-health bars and the emerald compression bar).
+- `badge.jsx` — re-added the `success` / `warning` / `info` / `violet` variants used for the
+  route chips and alert badges.
+- `data/mock.js` + `Analytics.jsx` — route categories now use four distinct hues matching the
+  badge colours; the preset's `--chart-1…5` are five shades of the same lime, so the route
+  donut was unreadable.
+
+Custom animation classes (`ar-rise`, `ar-flow`, `ar-ping`, `ar-grid-bg`) survived at the
+bottom of `src/index.css` — keep them if you re-run init again.
+
+## Deploy (Vercel)
+
+`vercel.json` is included with an SPA rewrite so refreshing on any route works:
+
+```json
+"rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
 ```
 
-Back up `src/index.css` first — init rewrites the theme tokens with the preset's palette.
-Do **not** re-add components that already exist in `src/components/ui/` unless you want
-the Radix versions; the local ones have the same API and need zero extra dependencies.
+Build command `npm run build`, output `dist`. Immutable caching on `/assets/*`.
 
 ## Structure
 

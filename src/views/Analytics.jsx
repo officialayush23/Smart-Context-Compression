@@ -6,10 +6,10 @@ import { CompareLineChart, Donut, FunnelBars, Sparkline } from "@/components/cha
 import { LATENCY_SERIES, ROUTE_MIX, COMPRESSION_BARS, KPIS } from "@/data/mock"
 
 const ROUTE_PERF = [
-  { route: "Direct Answer", share: 22, latency: 230, cost: 0.0004, grounded: 0.98, color: "var(--chart-3)" },
-  { route: "Vector Store", share: 41, latency: 680, cost: 0.0021, grounded: 0.96, color: "var(--chart-1)" },
-  { route: "Hybrid + Rerank", share: 26, latency: 1180, cost: 0.0068, grounded: 0.94, color: "var(--chart-2)" },
-  { route: "Live Web Scrape", share: 11, latency: 2140, cost: 0.0049, grounded: 0.91, color: "var(--chart-4)" },
+  { route: "Direct Answer", share: 22, latency: 230, cost: 0.0004, grounded: 0.98, color: "oklch(0.80 0.15 80)" },
+  { route: "Vector Store", share: 41, latency: 680, cost: 0.0021, grounded: 0.96, color: "oklch(0.72 0.17 300)" },
+  { route: "Hybrid + Rerank", share: 26, latency: 1180, cost: 0.0068, grounded: 0.94, color: "oklch(0.75 0.13 225)" },
+  { route: "Live Web Scrape", share: 11, latency: 2140, cost: 0.0049, grounded: 0.91, color: "oklch(0.80 0.20 140)" },
 ]
 
 const EVAL = [
